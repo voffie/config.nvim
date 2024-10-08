@@ -2,6 +2,9 @@
 vim.opt.nu = true
 vim.opt.rnu = true
 
+-- Disable showing the mode below the statusline
+vim.opt.showmode = false
+
 -- Set tabs to 2 spaces
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -13,6 +16,10 @@ vim.opt.shiftwidth = 2
 
 -- Enable smart indenting
 vim.opt.breakindent = true
+
+-- Enable incremental searching
+vim.opt.incsearch = true
+vim.opt.hlsearch = true
 
 -- Disable text wrap
 vim.opt.wrap = false
@@ -28,11 +35,15 @@ vim.opt.splitright = true
 -- Enable mouse mode
 vim.opt.mouse = "a"
 
--- Decrease updatetime to 200ms
-vim.opt.updatetime = 50
+-- Enable ignorecase + smartcase for better searching
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- Decrease updatetime to 250ms
+vim.opt.updatetime = 250
 
 -- Set completeopt to have a better completion experience
-vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- Enable persistent undo history
 vim.opt.undofile = true
@@ -49,14 +60,20 @@ vim.opt.clipboard = "unnamed,unnamedplus"
 -- Enable cursor line highlight
 vim.opt.cursorline = true
 
+-- Set fold settings
+-- These options were recommended by nvim-ufo
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+vim.opt.foldcolumn = "0"
+vim.opt.foldnestmax = 5
+vim.opt.foldtext = ""
+
 -- Always keep 8 lines above/below cursor unless at start/end of file
 vim.opt.scrolloff = 8
 
 -- Place a column line
 vim.opt.colorcolumn = "80"
-
--- Always show the sign column
-vim.opt.signcolumn = "yes"
 
 vim.opt.guicursor = {
 	"n-v-c:block", -- Normal, visual, command-line: block cursor
